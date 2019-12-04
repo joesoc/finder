@@ -33,6 +33,8 @@ button[uxSidePanelClose] {
 body .wrapper-content, .body-light .wrapper-content{
     padding:0px;
     float: right;
+    width: 100%;
+    height: 100%;
 }
 
 .hpe-ebox, .ebox {
@@ -40,6 +42,8 @@ body .wrapper-content, .body-light .wrapper-content{
     margin-bottom:0px;
     margin-left:0px;
     margin-right:0px;
+    width: 100%;
+    height: 95%;
 }
 .page-main.masthead-offset-primary > * {
     padding-top:0px;
@@ -50,4 +54,6 @@ body .wrapper-content, .body-light .wrapper-content{
 .page-content{
     float:left;
     margin-left: 0px;
+    width: 97%;
+    height: 100%;
 }
