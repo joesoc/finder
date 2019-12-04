@@ -1,3 +1,12 @@
 .searchbox{
     margin-top:5px;
 }
+.searchtd{
+    width:95%;
+}
+
+.table tr {
+    vertical-align: top;
+    border-width: 0 0 0 0;
+    color: #323435;
+}

@@ -1,0 +1,28 @@
+<div class="row drop-direction-up">
+    <div class="col-sm-6 col-xs-12">
+        <div class="form-group m-nil">
+            <ux-combobox [(value)]="comboboxValue"
+                [options]="options"
+                [multiple]="multiple | async"
+                [display]="display"
+                [key]="key"
+                [allowNull]="allowNull"
+                [disabled]="disabled"
+                [dropDirection]="dropDirection"
+                [(dropdownOpen)]="comboboxOpen"
+                [pageSize]="pageSize"
+                [placeholder]="placeholder"
+                [readonlyInput]="readonlyInput"
+                [clearButton]="clearButton">
+
+                <ng-template #icon *ngIf="multiple | async">
+                    <div class="ux-select-icon">
+                        <ux-icon name="add"></ux-icon>
+                    </div>
+                </ng-template>
+            </ux-combobox>
+
+            <p class="m-t-md">Selected location(s): <code>{{ comboboxValue | json }}</code></p>
+        </div>
+    </div>
+</div>  
