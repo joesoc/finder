@@ -1,0 +1,37 @@
+<html>
+
+<head>
+  <title>{{pageTitle}}</title>
+</head>
+<body>
+<form [formGroup]="loginForm" (ngSubmit)="login()" >
+  <div class="logindiv container">
+        <h2>Login to IDOL</h2>
+          <div class="row">
+              <div class="form-group col-sm">
+                  <label [uxFloatLabel]="username" [value]="usernameValue" for="username">User Name</label>
+                  <input type="text" #username id="username" class="form-control" formControlName="username">
+              </div>
+          </div>
+          <div class="row">
+                  <div class="form-group col-sm">
+                  <label [uxFloatLabel]="password" [value]="passwordValue" for="password">Password</label>
+                  <input type="password" #password id="password" class="form-control" formControlName="password">
+              </div>
+          </div>
+          <div class="row">
+              <div class="form-group col-sm-3">
+                  <button type="submit" class="m-b btn button-primary">Login</button>
+                  <button type="button" class="m-b btn button-secondary">Cancel</button>
+              </div>
+          </div>
+          <div class="row">
+            <div class="alert alert-danger" *ngIf="errorMessage">{{errorMessage}}
+            </div>
+          </div>
+    </div>
+  
+</form>
+  
+</body>
+</html>

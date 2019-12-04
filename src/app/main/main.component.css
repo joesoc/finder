@@ -1,0 +1,53 @@
+@import "~@ux-aspects/ux-aspects/styles/ux-aspects.min.css";
+@import "~@micro-focus/quantum-ux-aspects";
+
+
+ux-page-header .ux-page-header{
+    background-color:TEAL;
+}
+
+body {
+    padding: 0;
+    background-color: #f1f2f3;
+}
+
+.page-main {
+    height: 100vh;
+}
+
+button[uxSidePanelClose] {
+    position: absolute;
+    top: 28px;
+    right: 12px;
+}
+
+.modal .modal-dialog {
+    width: 500px;
+    overflow: hidden;
+}
+
+.modal .modal-body {
+    height: 400px;
+}
+
+body .wrapper-content, .body-light .wrapper-content{
+    padding:0px;
+    float: right;
+}
+
+.hpe-ebox, .ebox {
+    margin-top:0px;
+    margin-bottom:0px;
+    margin-left:0px;
+    margin-right:0px;
+}
+.page-main.masthead-offset-primary > * {
+    padding-top:0px;
+}
+.ConceptInput{
+    height: 40px;
+}
+.page-content{
+    float:left;
+    margin-left: 0px;
+}

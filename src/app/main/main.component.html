@@ -1,0 +1,41 @@
+<div class="page-main masthead-offset-primary">
+
+    <ux-side-menu-container class="side-menu-container page-main masthead-offset-primary">
+        <ux-side-menu
+            role="navigation"
+            [mode]="mode"
+            [autoCollapse]="autoCollapse"
+            [(expanded)]="expanded"
+            (click)="expanded = !expanded">
+
+            <ux-side-menu-item routerLink="/Main">
+                <ux-icon uxSideMenuItemIcon name="dashboard"></ux-icon>
+                Home
+            </ux-side-menu-item>
+            <ux-side-menu-item routerLink="/Main/Search">
+                <ux-icon uxSideMenuItemIcon name="glass"></ux-icon>
+                Search
+            </ux-side-menu-item>
+            <ux-side-menu-item redirectTo="/Main/Profile">
+                <ux-icon uxSideMenuItemIcon name="user"></ux-icon>
+                Vinay
+                <ux-side-menu-item routerLink="/Main/Profile">Profile</ux-side-menu-item>
+                <ux-side-menu-item (click)="logOut()">Logout</ux-side-menu-item>
+
+            </ux-side-menu-item>
+        </ux-side-menu>
+
+        <ux-side-menu-content>
+          <div class="page-content">
+            <div class="wrapper-content">
+                <div class="ebox">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+          </div>
+        </ux-side-menu-content>
+
+    </ux-side-menu-container>
+
+
+</div>
