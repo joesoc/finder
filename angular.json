@@ -23,7 +23,10 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/@ux-aspects/ux-aspects/styles/ux-aspects.min.css",
+              "node_modules/@micro-focus/quantum-ux-aspects/dist/ux-aspects/css/main.css",
               "src/styles.css"
             ],
             "scripts": [],

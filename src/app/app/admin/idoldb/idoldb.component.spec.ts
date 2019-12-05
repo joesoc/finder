@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SearchboxComponent } from './searchbox.component';
+import { IdoldbComponent } from './idoldb.component';
 
-describe('SearchboxComponent', () => {
-  let component: SearchboxComponent;
-  let fixture: ComponentFixture<SearchboxComponent>;
+describe('IdoldbComponent', () => {
+  let component: IdoldbComponent;
+  let fixture: ComponentFixture<IdoldbComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SearchboxComponent ]
+      declarations: [ IdoldbComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SearchboxComponent);
+    fixture = TestBed.createComponent(IdoldbComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

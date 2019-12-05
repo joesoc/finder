@@ -1,12 +1,16 @@
 
-@import "~@ux-aspects/ux-aspects/styles/ux-aspects.min.css";
-@import "~@micro-focus/quantum-ux-aspects";
-
 .logindiv{
     padding-left:400px;
     padding-top:300px;
     padding-right:400px;
     padding-bottom:100px;
-    width:500px;
+    width:2000px;
 }
 
+.Cancel {
+    display: inline-block;
+    padding-left: 10px;
+}
+.Submit{
+    display: inline-block;
+}
