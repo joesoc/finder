@@ -10,25 +10,27 @@ import { LoggerService } from 'src/app/common/logging/logger.service';
 })
 export class ContentserviceService {
   idolDatabases : Array<string>;
-  constructor(private _http:HttpClient, logger: LoggerService) { }
+  constructor(private _http:HttpClient, private logger: LoggerService) { }
 
   getDatabases(): Array<string> {
     this.idolDatabases = [];
     this.getDatabasesObs().subscribe(response => {
+      this.logger.log("response = " + response.autnresponse.response.toString());
       if (response.autnresponse.response == "SUCCESS")
       {
         var idolDbs = response.autnresponse.responsedata.databases.database;
         idolDbs.forEach(database => {
+          this.logger.log("Database Name = "+database.name);
           this.idolDatabases.push(database.name);
         });
-        return this.idolDatabases;
       }
     });
-    return [];
+    return this.idolDatabases;
   }
 
   getDatabasesObs(): Observable<IContentGetStatus> {
-    return this._http.get<IContentGetStatus>(`http://${environment.content_ip}:${environment.content_port}/`,{
+    let url = `http://${environment.content_ip}:${environment.content_port}/`;
+    return this._http.get<IContentGetStatus>( url ,{
       params:{
         Action:'GetStatus',
         ResponseFormat:'simplejson'
