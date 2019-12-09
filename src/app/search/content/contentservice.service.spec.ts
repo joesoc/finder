@@ -20,7 +20,18 @@ describe('#getDatabases', () => {
       logger.log("databases Length = " + databases.length);
       expect(databases.length).toBeGreaterThan(0);
       done();
+    });
+  });
 
+  it('should return exactly three IDOL dbs', (done) => {
+    const service: ContentService = TestBed.get(ContentService);
+    const logger: LoggerService = TestBed.get(LoggerService);
+
+    service.getDatabases().subscribe(databases => {
+
+      logger.log("databases Length = " + databases.length);
+      expect(databases.length).toBe(3);
+      done();
     });
   });
 

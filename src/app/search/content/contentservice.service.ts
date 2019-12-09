@@ -17,12 +17,10 @@ export class ContentserviceService implements IContentserviceService {
     return this.getDatabasesObs().pipe(map(response => {
 
       this.idolDatabases = [];
-      this.logger.log("response = " + response.autnresponse.response.toString());
       if (response.autnresponse.response == "SUCCESS")
       {
         var idolDbs = response.autnresponse.responsedata.databases.database;
         idolDbs.forEach(database => {
-          this.logger.log("Database Name = "+database.name);
           this.idolDatabases.push(database.name);
         });
       }
