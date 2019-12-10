@@ -18,6 +18,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { SearchComponent } from './search/search.component';
 import { SearchboxComponent } from './app/search/searchbox/searchbox.component';
 import { IdoldatabasedropdownComponent } from './app/search/idoldatabasedropdown/idoldatabasedropdown.component';
+import { TypeaheadComponent } from './search/content/typeahead/typeahead.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { IdoldatabasedropdownComponent } from './app/search/idoldatabasedropdown
     ProfileComponent,
     SearchComponent,
     SearchboxComponent,
-    IdoldatabasedropdownComponent
+    IdoldatabasedropdownComponent,
+    TypeaheadComponent
   ],
   imports: [
     BrowserModule,
