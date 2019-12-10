@@ -15,7 +15,6 @@ export class ContentserviceService implements IContentserviceService {
 
   getDatabases(): Observable<Array<string>> {
     return this.getDatabasesObs().pipe(map(response => {
-
       this.idolDatabases = [];
       if (response.autnresponse.response == "SUCCESS")
       {
@@ -24,7 +23,6 @@ export class ContentserviceService implements IContentserviceService {
           this.idolDatabases.push(database.name);
         });
       }
-
       return this.idolDatabases;
     }));
   }

@@ -10,7 +10,7 @@ describe('TypeaheadService', () => {
     providers:[TypeAheadServiceMock, LoggerService] 
   }));
 
-  it('returns more than one word', () => {
+  it('returns a successful response', () => {
     const service: TypeAheadServiceMock = TestBed.get(TypeAheadServiceMock);
     const logger: LoggerService = TestBed.get(LoggerService);
 
@@ -20,5 +20,14 @@ describe('TypeaheadService', () => {
         logger.log(word);
       });
     })
+  });
+
+  it('it returns more than 4 words', () => {
+    const service: TypeAheadServiceMock = TestBed.get(TypeAheadServiceMock);
+    const logger: LoggerService = TestBed.get(LoggerService);
+
+    service.getTermExpand("System").subscribe(response => {
+      expect(response.length).toBeGreaterThan(4);
+    });
   });
 });

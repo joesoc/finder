@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { ITypeAheadService } from './interface/Itypeahead.service';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,19 @@ export class TypeAheadService implements ITypeAheadService {
   {
 
   }
-  getTermExpand
+  getTermExpand(word: string): Observable<Array<String>> {
+    this.words = [];
+    return this.getTermExpandObs(word).pipe(map(response => {
+      this.words = [];
+      if(response.autnresponse.response == "SUCCESS"){
+        var words = response.autnresponse.responsedata.term;
+        words.forEach((word: String) => {
+          this.words.push(word);
+        })
+      }
+      return this.words;
+    }));
+  }
   getTermExpandObs(word: string) : Observable<TypeAheadResponsse> {
     let url = `http://${environment.content_ip}:${environment.content_port}/`;
     return this._http.get<TypeAheadResponsse>( url , {
