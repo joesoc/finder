@@ -35,8 +35,6 @@ export class SearchboxComponent implements OnInit {
 
     constructor(private svcTypeAhead: TypeAheadService, private logger: LoggerService ) {
 
-        /* Adding values to typeahead list */
-        
     }
 
   populateSearchBox() {
