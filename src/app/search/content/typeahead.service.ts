@@ -35,7 +35,8 @@ export class TypeAheadService implements ITypeAheadService {
       params:{
         Action:'TermExpand',
         ResponseFormat:'simplejson',
-        Text: word
+        Text: word,
+        Expansion:'Fuzzy'
       }
     });
   }

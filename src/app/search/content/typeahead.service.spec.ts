@@ -12,7 +12,7 @@ describe('TypeaheadService', () => {
     providers:[TypeAheadServiceMock, LoggerService] 
   }));
 
-  it('returns success when getTermExpandObs called', () => {
+  xit('returns success when getTermExpandObs called', () => {
     const service: TypeAheadServiceMock = TestBed.get(TypeAheadServiceMock);
     const logger: LoggerService = TestBed.get(LoggerService);
 
@@ -38,10 +38,11 @@ describe('TypeaheadService', () => {
     const logger: LoggerService = TestBed.get(LoggerService);
 
     service.getTermExpand("system").subscribe(response => {
-      expect(response.length).toBeGreaterThan(3);
+      
       response.forEach(element => {
         logger.log("Word - " + element);
       })
+      expect(response.length).toBeGreaterThan(3);
     });
   });
 });

@@ -12,7 +12,7 @@ import { LoggerService } from 'src/app/common/logging/logger.service';
   styleUrls: ['./searchbox.component.css']
 })
 export class SearchboxComponent implements OnInit {
-  values: Array<string> = [];
+  values: ReadonlyArray<string> = [];
 
   dropdownOpen: boolean = false;
   selectOnEnter: boolean = true;
@@ -23,7 +23,7 @@ export class SearchboxComponent implements OnInit {
 
   loadOptionsFn = this.loadOptions.bind(this);
       /** Load the options and filter the them */
-      loadOptions(pageNum: number, pageSize: number, filter: string): Promise<Array<string>> {
+      loadOptions(pageNum: number, pageSize: number, filter: string): Promise<ReadonlyArray<string>> {
 
         // get the values for the current page based on the filter text provided
         const values = this.values.filter(tag => tag.toLowerCase().indexOf(filter.toLowerCase()) !== -1)
@@ -40,14 +40,14 @@ export class SearchboxComponent implements OnInit {
     }
 
   populateSearchBox($event, typeahead: string) {
-    this.logger.log("Type ahead " +  typeahead);
     this.values = [];
     this.svcTypeAhead.getTermExpand(this.input).subscribe(response => {
       response.forEach(term => {
-        this.values.push(term);
+        this.values = [...this.values, term];
+        this.logger.log("Term = "+ term);
       });
     });
-    this.loadOptions(1, 10, typeahead);
+    
   }
 
   ngOnInit() {
