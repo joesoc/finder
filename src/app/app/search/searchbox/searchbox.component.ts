@@ -39,7 +39,7 @@ export class SearchboxComponent implements OnInit {
         
     }
 
-  populateSearchBox($event, typeahead: string) {
+  populateSearchBox() {
     this.values = [];
     this.svcTypeAhead.getTermExpand(this.input).subscribe(response => {
       response.forEach(term => {
