@@ -25,8 +25,8 @@ export class TypeAheadService implements ITypeAheadService {
         terms.forEach(element => {
           this.words.push(element);
         });
-        return this.words;
       }
+      return this.words;
     }));
   }
   getTermExpandObs(word: string) : Observable<TypeAheadResponsse> {
